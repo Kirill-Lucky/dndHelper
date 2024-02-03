@@ -4,8 +4,8 @@
 
 body {
     margin: 0;
+    background-image: url(/public/img/back.jpg);
 }
-
 .container{
     margin: 1rem;
     text-align: center;
@@ -18,8 +18,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    gap: 2rem;
-    padding: 0, 1rem;
+    gap: 2px;
+    padding: 20px, 10px;
 }
 
 .home{
@@ -27,7 +27,7 @@ body {
 }
 
 .nav ul{
-    padding: 0px;
+    padding: 10px;
     margin: 0px;
     list-style: none;
     display: flex;
@@ -49,4 +49,8 @@ body {
 
 .nav li:hover {
     background-color: #777;
+}
+
+.table{
+    align-items: center;
 }
