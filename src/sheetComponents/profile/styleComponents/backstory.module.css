@@ -1,0 +1,9 @@
+.backstory{
+    margin: 30px;
+}
+
+.backstory p{
+    text-align: left;
+    font-size: 18px;
+    margin: 0;
+}

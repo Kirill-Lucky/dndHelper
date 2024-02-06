@@ -1,0 +1,48 @@
+.counter{
+  margin: 30px;
+  text-align: left;
+}
+
+.counter span{
+  font-size: 20px;
+  margin: 3px;
+}
+
+.counter p{
+  text-align: left;
+  margin: 3px;
+}
+.counter-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  span.count {
+    margin: 0 10px;
+  }
+  
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0;
+  }
+  
+  button:hover {
+    color: blue; /* Цвет при наведении */
+  }
+  
+  /* Стилизация кнопки "+" */
+  .increment::before {
+    content: '\25B2'; /* Unicode для стрелочки вверх */
+    display: block;
+  }
+  
+  /* Стилизация кнопки "-" */
+  .decrement::before {
+    content: '\25BC'; /* Unicode для стрелочки вниз */
+    display: block;
+  }
+  
+  

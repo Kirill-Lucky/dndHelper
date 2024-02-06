@@ -1,0 +1,22 @@
+.character tr{
+    font-size: 20px;
+}
+
+.creation {
+    width: 300px;
+    height: 40px;
+    background-color: #bcaa89; 
+    border: 1px solid #c3a47d; 
+    color: #704c28; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    text-align: center;
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+  }
+  
+  .creation:hover {
+    background-color: #e0c992; 
+  }
+  

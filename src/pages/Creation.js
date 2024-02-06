@@ -1,4 +1,4 @@
-import Profile from "../sheetComponents/profile";
+import Profile from "../sheetComponents/profile/profile";
 import styles from './Creation.module.css';
 export default function Creation(){
     return (

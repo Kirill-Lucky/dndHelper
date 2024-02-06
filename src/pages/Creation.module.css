@@ -1,7 +1,9 @@
 .sheet{
     padding: 10px;
     margin: 0 auto;
-    background-color: white;
+    background-image: url(/public/img/old.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;;
     width: 82%;
     text-align: center;
 }

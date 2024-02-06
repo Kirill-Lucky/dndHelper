@@ -5,6 +5,8 @@
 body {
     margin: 0;
     background-image: url(/public/img/back.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 .container{
     margin: 1rem;
