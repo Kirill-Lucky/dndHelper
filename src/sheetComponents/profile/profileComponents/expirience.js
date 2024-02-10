@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import styles from '../styleComponents/expirience.module.css'
+import Profile from "../profile";
 
 export default function Expirience(){
     
@@ -12,7 +13,8 @@ export default function Expirience(){
     return (
         <div className={styles.expirience}>
             <p>Expirience</p>
-           <input type="number" min="0" step="1" value={expirience} onChange={allExp} placeholder="Expirience"></input> 
+           <input type="number" min="0" step="1" value={expirience} onChange={(e)=>expirience(e)} placeholder="Expirience"></input>
+           <Profile expirience={expirience} /> 
         </div>
         //{expirience} для передачи в стейт
     )

@@ -1,18 +1,19 @@
 import React, { useState } from "react"
 import styles from '../styleComponents/levelCounter.module.css'
+import Profile from "../profile";
 
 
 export default function LevelCounter(){
-    const[count, setCount] = useState(1);
+    const[level, setLevel] = useState(1);
     const increment = () => {
-        if (count < 20) {
-          setCount(count + 1);
+        if (level < 20) {
+          setLevel(level + 1);
         }
       };
     
       const decrement = () => {
-        if (count > 1) {
-          setCount(count - 1);
+        if (level > 1) {
+          setLevel(level - 1);
         }
       };
 
@@ -21,9 +22,10 @@ export default function LevelCounter(){
             <p>Level</p>
             <div className="counter-container">
                 <button type="button" className="decrement" onClick={decrement}>-</button>
-                    <span className="count">{count}</span>
+                    <span className="count">{level}</span>
                 <button type="button" className="increment" onClick={increment}>+</button>
             </div>
+            <Profile level={level} />
         </div>
     )
 }

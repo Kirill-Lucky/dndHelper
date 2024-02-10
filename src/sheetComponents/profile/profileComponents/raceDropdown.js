@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import styles from '../styleComponents/raceDropdown.module.css'
+import Profile from "../profile";
 
 export default function RaceDropdown(){
     const [race, setRace] = useState('');
@@ -22,6 +23,7 @@ export default function RaceDropdown(){
                 <option value="tiefling">Tiefling</option>
                 <option value="elf">Elfe</option>
             </select>
+            <Profile race={race} />
         </div>
 
         //{race} переменная для передачи state

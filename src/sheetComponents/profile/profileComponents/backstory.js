@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import styles from '../styleComponents/backstory.module.css'
+import Profile from "../profile";
 
 export default function Backstory(){
     const [backstory, setBackstory] = useState('');
@@ -27,6 +28,7 @@ export default function Backstory(){
                 <option value="outlander">Outlander</option>
                 <option value="charlatan">Charlatan</option>
             </select>
+            <Profile backstory={backstory} />
         </div>
 
         //{backstory} переменная для передачи state

@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import styles from '../styleComponents/classDropdown.module.css'
+import Profile from "../profile";
 
 export default function ClassDropdown(){
     const [clas, setClas] = useState('');
@@ -26,6 +27,7 @@ export default function ClassDropdown(){
                 <option value="ranger">Ranger</option>
                 <option value="sorcerer">Sorcerer</option>
             </select>
+            <Profile clas={clas} />
         </div>
 
          //{clas} переменная для передачи state

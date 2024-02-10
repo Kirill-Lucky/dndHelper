@@ -9,7 +9,12 @@ import Backstory from "./profileComponents/backstory.js"
 import Expirience from "./profileComponents/expirience.js"
 
 
-export default function Profile(){
+export default function Profile({aligment, backstory, name, clas, expirience, level, race}){
+    saveCharacter = () => {
+        characterSheet = []
+    };
+
+
     return (
         <div className={styles.character}>
             <form>
@@ -32,4 +37,6 @@ export default function Profile(){
             </form>
         </div>
     )
+
+
 }
