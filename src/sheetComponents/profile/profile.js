@@ -1,7 +1,7 @@
 import React from "react"
 import styles from './profile.module.css'
 import LevelCounter from "./profileComponents/levelCounter.js" 
-import RaceDropdown from "./profileComponents/raceDropdown.js"
+import  RaceDropdown from "./profileComponents/raceDropdown.js"
 import ClassDropdown from "./profileComponents/classDropdown.js"
 import CharacterName from "./profileComponents/characterName.js"
 import Aligment from "./profileComponents/aligment.js"
@@ -10,15 +10,16 @@ import Expirience from "./profileComponents/expirience.js"
 
 
 export default function Profile({aligment, backstory, name, clas, expirience, level, race}){
-    saveCharacter = () => {
-        characterSheet = []
+    const saveCharacter = (level) => {
+        //const characterSheet = [aligment, backstory, name, clas, expirience, level, race]
+        console.log(level);
     };
 
 
     return (
         <div className={styles.character}>
             <form>
-                <table class="profile">
+                <table className="profile">
                     <tbody>
                         <tr>
                             <td rowspan="2"><CharacterName /></td>
@@ -33,7 +34,7 @@ export default function Profile({aligment, backstory, name, clas, expirience, le
                         </tr>
                     </tbody>
                 </table>
-                <button className={styles.creation}>Create</button>
+                <button type="button" className={styles.creation} onClick={saveCharacter}>Create</button>
             </form>
         </div>
     )

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styles from '../styleComponents/levelCounter.module.css'
-import Profile from "../profile";
+
 
 
 export default function LevelCounter(){
@@ -25,7 +25,7 @@ export default function LevelCounter(){
                     <span className="count">{level}</span>
                 <button type="button" className="increment" onClick={increment}>+</button>
             </div>
-            <Profile level={level} />
+           
         </div>
     )
 }

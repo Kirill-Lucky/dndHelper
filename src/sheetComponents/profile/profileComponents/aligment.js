@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import styles from '../styleComponents/aligment.module.css'
-import Profile from "../profile";
+
 
 export default function Aligment(){
     const [aligment, setAligment] = useState('');
@@ -23,7 +23,7 @@ export default function Aligment(){
                 <option value="chaotic-neutral">Chaotic-Neutral</option>
                 <option value="chaotic-evil">Chaotic-Evil</option>
             </select>
-            <Profile aligment={aligment} />
+            
         </div>
 
         //{aligment} переменная для передачи state

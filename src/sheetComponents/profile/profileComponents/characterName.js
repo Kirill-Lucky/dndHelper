@@ -1,6 +1,5 @@
 import styles from '../styleComponents/characterName.module.css'
 import React, { useState } from 'react';
-import Profile from '../profile';
 
 
 export default function CharacterName(){
@@ -13,7 +12,7 @@ export default function CharacterName(){
     return (
         <div className={styles.name}>
            <input type="text" value={name} onChange={(e)=>characterName(e)} placeholder="Character name"></input> 
-           <Profile name={name} />
+           
         </div>
         //{name} для передачи в стейт
     )
