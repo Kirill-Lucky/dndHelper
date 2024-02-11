@@ -10,7 +10,7 @@ import Expirience from "./profileComponents/expirience.js"
 
 
 export default function Profile({aligment, backstory, name, clas, expirience, level, race}){
-    const saveCharacter = (level) => {
+    const saveCharacter = ({level}) => {
         //const characterSheet = [aligment, backstory, name, clas, expirience, level, race]
         console.log(level);
     };

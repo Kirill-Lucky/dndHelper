@@ -17,6 +17,7 @@ export default function LevelCounter(){
         }
       };
 
+
     return (
         <div className={styles.counter}>
             <p>Level</p>
