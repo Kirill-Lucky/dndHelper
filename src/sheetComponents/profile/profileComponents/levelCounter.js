@@ -1,10 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import styles from '../styleComponents/levelCounter.module.css'
 
 
 
-export default function LevelCounter(){
-    const[level, setLevel] = useState(1);
+export default function LevelCounter({setLevel, level}){
     const increment = () => {
         if (level < 20) {
           setLevel(level + 1);

@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import styles from './profile.module.css'
 import LevelCounter from "./profileComponents/levelCounter.js" 
 import  RaceDropdown from "./profileComponents/raceDropdown.js"
@@ -7,10 +7,14 @@ import CharacterName from "./profileComponents/characterName.js"
 import Aligment from "./profileComponents/aligment.js"
 import Backstory from "./profileComponents/backstory.js"
 import Expirience from "./profileComponents/expirience.js"
+//вызывать стейты в profile. и создавать там переменные value и setValue через useState. 
+//потом прокинуть эту функцию в дочерний компонент пропсом и там менять значение.
 
-
-export default function Profile({aligment, backstory, name, clas, expirience, level, race}){
-    const saveCharacter = ({level}) => {
+export default function Profile(){
+       
+    const [level, setLevel] = useState(1);
+   
+    const saveCharacter = () => {
         //const characterSheet = [aligment, backstory, name, clas, expirience, level, race]
         console.log(level);
     };
@@ -25,7 +29,7 @@ export default function Profile({aligment, backstory, name, clas, expirience, le
                             <td rowspan="2"><CharacterName /></td>
                             <td><ClassDropdown /></td>
                             <td><Expirience /></td>
-                            <td><LevelCounter/></td>
+                            <td><LevelCounter setLevel={setLevel} level={level}/></td>
                         </tr>
                         <tr>
                             <td><RaceDropdown /></td>
@@ -38,6 +42,4 @@ export default function Profile({aligment, backstory, name, clas, expirience, le
             </form>
         </div>
     )
-
-
 }
