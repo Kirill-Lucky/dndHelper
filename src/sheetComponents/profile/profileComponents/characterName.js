@@ -2,12 +2,7 @@ import styles from '../styleComponents/characterName.module.css'
 import React, { useState } from 'react';
 
 
-export default function CharacterName(){
-    const [name, setName] = useState('');
-
-    const characterName = (event) => {
-        setName(event.target.value);
-    };
+export default function CharacterName({name, characterName}){
 
     return (
         <div className={styles.name}>

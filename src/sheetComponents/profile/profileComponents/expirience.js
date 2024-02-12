@@ -2,13 +2,7 @@ import React, {useState} from "react"
 import styles from '../styleComponents/expirience.module.css'
 
 
-export default function Expirience(){
-    
-    const [expirience, setExpirience] = useState('');
-
-    const allExp = (event) => {
-        setExpirience(event.target.value);
-    };
+export default function Expirience({expirience, allExp}){
 
     return (
         <div className={styles.expirience}>

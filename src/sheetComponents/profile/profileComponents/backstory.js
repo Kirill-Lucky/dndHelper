@@ -2,11 +2,8 @@ import React, {useState} from "react"
 import styles from '../styleComponents/backstory.module.css'
 
 
-export default function Backstory(){
-    const [backstory, setBackstory] = useState('');
-    const selectedBackstory  = (event) =>{
-        setBackstory(event.target.value);
-    }
+export default function Backstory({backstory, selectedBackstory}){
+   
 
     return(
         <div className={styles.backstory}>

@@ -11,12 +11,48 @@ import Expirience from "./profileComponents/expirience.js"
 //потом прокинуть эту функцию в дочерний компонент пропсом и там менять значение.
 
 export default function Profile(){
-       
+    
+    const [aligment, setAligment] = useState('');
+    const selectedAligment  = (event) =>{
+        setAligment(event.target.value);
+    }
+
+    const [backstory, setBackstory] = useState('');
+    const selectedBackstory  = (event) =>{
+        setBackstory(event.target.value);
+    }
+
+    const [name, setName] = useState('');
+    const characterName = (event) => {
+        setName(event.target.value);
+    };
+
+    const [clas, setClas] = useState('');
+    const selectedClas = (event) =>{
+        setClas(event.target.value);
+    }
+
+    const [expirience, setExpirience] = useState('');
+    const allExp = (event) => {
+        setExpirience(event.target.value);
+    };
+
     const [level, setLevel] = useState(1);
+
+    const [race, setRace] = useState('');
+    const selectedRace = (event) =>{
+        setRace(event.target.value);
+    }
    
     const saveCharacter = () => {
         //const characterSheet = [aligment, backstory, name, clas, expirience, level, race]
         console.log(level);
+        console.log(aligment);
+        console.log(backstory);
+        console.log(name);
+        console.log(clas);
+        console.log(expirience);
+
     };
 
 
@@ -26,15 +62,15 @@ export default function Profile(){
                 <table className="profile">
                     <tbody>
                         <tr>
-                            <td rowspan="2"><CharacterName /></td>
-                            <td><ClassDropdown /></td>
-                            <td><Expirience /></td>
+                            <td rowspan="2"><CharacterName name={name} characterName= {characterName}/></td>
+                            <td><ClassDropdown clas={clas} selectedClas={selectedClas}/></td>
+                            <td><Expirience expirience={expirience} allExp={allExp}/></td>
                             <td><LevelCounter setLevel={setLevel} level={level}/></td>
                         </tr>
                         <tr>
-                            <td><RaceDropdown /></td>
-                            <td><Backstory /></td>
-                            <td><Aligment /></td>
+                            <td><RaceDropdown race={race} selectedRace={selectedRace}/></td>
+                            <td><Backstory backstory = {backstory} selectedBackstory = {selectedBackstory}/></td>
+                            <td><Aligment aligment={aligment} selectedAligment = {selectedAligment}/></td>
                         </tr>
                     </tbody>
                 </table>

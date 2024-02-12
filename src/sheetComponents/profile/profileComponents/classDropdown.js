@@ -2,11 +2,7 @@ import React, {useState} from "react"
 import styles from '../styleComponents/classDropdown.module.css'
 
 
-export default function ClassDropdown(){
-    const [clas, setClas] = useState('');
-    const selectedClas = (event) =>{
-        setClas(event.target.value);
-    }
+export default function ClassDropdown({clas, selectedClas}){
 
     return(
         <div className={styles.clas}>

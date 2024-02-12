@@ -2,11 +2,7 @@ import React, {useState} from "react"
 import styles from '../styleComponents/aligment.module.css'
 
 
-export default function Aligment(){
-    const [aligment, setAligment] = useState('');
-    const selectedAligment  = (event) =>{
-        setAligment(event.target.value);
-    }
+export default function Aligment({selectedAligment, aligment}){
 
     return(
         <div className={styles.aligment}>

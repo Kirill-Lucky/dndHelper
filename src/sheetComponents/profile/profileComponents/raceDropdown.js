@@ -2,11 +2,7 @@ import React, {useState} from "react"
 import styles from '../styleComponents/raceDropdown.module.css'
 
 
-export default function RaceDropdown(){
-    const [race, setRace] = useState('');
-    const selectedRace = (event) =>{
-        setRace(event.target.value);
-    }
+export default function RaceDropdown({race, selectedRace}){
 
     return(
         <div className={styles.race}>
