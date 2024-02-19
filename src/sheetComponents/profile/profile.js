@@ -46,12 +46,24 @@ export default function Profile(){
    
     const saveCharacter = () => {
         //const characterSheet = [aligment, backstory, name, clas, expirience, level, race]
-        console.log(level);
-        console.log(aligment);
-        console.log(backstory);
-        console.log(name);
-        console.log(clas);
-        console.log(expirience);
+        const data = {
+            level: level,
+            aligment: aligment,
+            backstory: backstory,
+            name: name,
+            clas: clas,
+            experience: expirience,
+            race: race,
+        }
+        const newData = JSON.stringify(data);
+        localStorage.setItem('Character 2', newData)
+    };
+
+    const dragCharacter = () => {
+        
+        const dragData = localStorage.getItem('Character 2');
+        const pickedData = JSON.parse(dragData);
+        console.log(level)
 
     };
 
@@ -74,7 +86,8 @@ export default function Profile(){
                         </tr>
                     </tbody>
                 </table>
-                <button type="button" className={styles.creation} onClick={saveCharacter}>Create</button>
+                <button type="button" className={styles.creation} onClick={saveCharacter}>Save</button>
+                <button type="button" className={styles.creation} onClick={dragCharacter}>Take</button>
             </form>
         </div>
     )
