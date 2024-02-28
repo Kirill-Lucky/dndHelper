@@ -1,8 +1,21 @@
 
+
 export default function Characters(){
+    const dragCharacter = () => {
+        
+        const dragData = localStorage.getItem('Character 2');
+        const pickedData = JSON.parse(dragData);
+        
+        console.log(pickedData[level])
+       
+        
+        
+
+    };
 
     return (
-        <h1>Tasha</h1>
+        <button type="button" onClick={dragCharacter}>Save</button>
+        
         // <div className={styles.character}>
         //     <form>
         //         <table className="profile">

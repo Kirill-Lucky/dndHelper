@@ -59,13 +59,6 @@ export default function Profile(){
         localStorage.setItem('Character 2', newData)
     };
 
-    const dragCharacter = () => {
-        
-        const dragData = localStorage.getItem('Character 2');
-        const pickedData = JSON.parse(dragData);
-        console.log(level)
-
-    };
 
 
     return (
@@ -87,7 +80,6 @@ export default function Profile(){
                     </tbody>
                 </table>
                 <button type="button" className={styles.creation} onClick={saveCharacter}>Save</button>
-                <button type="button" className={styles.creation} onClick={dragCharacter}>Take</button>
             </form>
         </div>
     )
