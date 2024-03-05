@@ -7,8 +7,7 @@ import CharacterName from "./profileComponents/characterName.js"
 import Aligment from "./profileComponents/aligment.js"
 import Backstory from "./profileComponents/backstory.js"
 import Expirience from "./profileComponents/expirience.js"
-//вызывать стейты в profile. и создавать там переменные value и setValue через useState. 
-//потом прокинуть эту функцию в дочерний компонент пропсом и там менять значение.
+import dragCharacter from "../../pages/characterComponents/characterCard.js"
 
 export default function Profile(){
     
@@ -45,7 +44,13 @@ export default function Profile(){
     }
    
     const saveCharacter = () => {
-        //const characterSheet = [aligment, backstory, name, clas, expirience, level, race]
+
+        let key = 1;
+        const existingData = JSON.parse(localStorage.getItem(key)) || []; 
+        if (existingData.length>0){
+            key = Math.max(...existingData.map(item=>item.key)) + 1;
+        } 
+
         const data = {
             level: level,
             aligment: aligment,
@@ -55,9 +60,24 @@ export default function Profile(){
             experience: expirience,
             race: race,
         }
+
         const newData = JSON.stringify(data);
-        localStorage.setItem('Character 2', newData)
+        localStorage.setItem(key, newData)
+
+        dragCharacter();
+        resetData();
+        
     };
+
+    const resetData = () =>{
+        setLevel(1);
+        setAligment('');
+        setBackstory('');
+        setName('');
+        setClas('');
+        setExpirience('');
+        setRace('');
+    }
 
 
 
