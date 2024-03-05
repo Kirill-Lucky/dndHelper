@@ -45,12 +45,6 @@ export default function Profile(){
    
     const saveCharacter = () => {
 
-        let key = 1;
-        const existingData = JSON.parse(localStorage.getItem(key)) || []; 
-        if (existingData.length>0){
-            key = Math.max(...existingData.map(item=>item.key)) + 1;
-        } 
-
         const data = {
             level: level,
             aligment: aligment,
@@ -61,9 +55,16 @@ export default function Profile(){
             race: race,
         }
 
-        const newData = JSON.stringify(data);
-        localStorage.setItem(key, newData)
+        let key = 1
+        if (!localStorage.length === 0){
+            key = localStorage.length + 1;
+        } 
 
+        const stringData = JSON.stringify(data)
+        localStorage.setItem(key, stringData);
+
+        
+        
         dragCharacter();
         resetData();
         
