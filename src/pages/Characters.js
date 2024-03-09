@@ -1,10 +1,11 @@
 
 import Card from "./characterComponents/characterCard";
+import styles from './Characters.module.css';
 
 
 export default function Characters(){
     return (
-       <div>
+       <div className={styles.container}>
          <Card />
        </div>
      )

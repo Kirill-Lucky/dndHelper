@@ -8,6 +8,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .avatar{
@@ -20,9 +21,9 @@
 }
 
 .card td{
-  padding-left: 2px;
-  padding-right: 20px;
-  width: 100px;
+  
+  width: 30%; /* Ширина карточки, чтобы они занимали по три в ряду */
+  margin: 10px; /* Отступы между карточками */
   text-align: center;
 
 }

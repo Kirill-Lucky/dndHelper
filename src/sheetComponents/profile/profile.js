@@ -7,7 +7,7 @@ import CharacterName from "./profileComponents/characterName.js"
 import Aligment from "./profileComponents/aligment.js"
 import Backstory from "./profileComponents/backstory.js"
 import Expirience from "./profileComponents/expirience.js"
-import dragCharacter from "../../pages/characterComponents/characterCard.js"
+
 
 export default function Profile(){
     
@@ -44,8 +44,11 @@ export default function Profile(){
     }
    
     const saveCharacter = () => {
+        let id = 1;
+        id = getNextId(id);
 
         const data = {
+            id: id,
             level: level,
             aligment: aligment,
             backstory: backstory,
@@ -55,20 +58,23 @@ export default function Profile(){
             race: race,
         }
 
-        let key = 1
-        if (!localStorage.length === 0){
-            key = localStorage.length + 1;
-        } 
-
-        const stringData = JSON.stringify(data)
-        localStorage.setItem(key, stringData);
+        const characters = JSON.parse(localStorage.getItem('Characters')) || [];
+        characters.push(data);
+        localStorage.setItem('Characters', JSON.stringify(characters));
 
         
-        
-        dragCharacter();
         resetData();
         
     };
+
+    function getNextId(key) {
+        const data = JSON.parse(localStorage.getItem('Characters')) || [];
+        if (data.length === 0) {
+          return key; 
+        }
+        const lastObject = data[data.length - 1];
+        return lastObject.id + 1;
+      }
 
     const resetData = () =>{
         setLevel(1);
