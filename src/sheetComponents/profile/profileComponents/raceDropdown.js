@@ -2,12 +2,12 @@ import React, {useState} from "react"
 import styles from '../styleComponents/raceDropdown.module.css'
 
 
-export default function RaceDropdown({race, selectedRace}){
+export default function RaceDropdown({race, changeNewChar}){
 
     return(
         <div className={styles.race}>
             <p>Race</p>
-            <select value={race} onChange={selectedRace}>
+            <select value={race} onChange={(e) => changeNewChar("race", e.target.value)}>
                 <option value= "">Pick your Race</option>
                 <option value="gnome">Gnome</option>
                 <option value="dwarf">Dwarf</option>

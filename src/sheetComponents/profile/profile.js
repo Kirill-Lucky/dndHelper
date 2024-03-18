@@ -7,83 +7,51 @@ import CharacterName from "./profileComponents/characterName.js"
 import Aligment from "./profileComponents/aligment.js"
 import Backstory from "./profileComponents/backstory.js"
 import Expirience from "./profileComponents/expirience.js"
+import { v4 as uuidv4 } from 'uuid';
 
 
 export default function Profile(){
+    const [characters, setCharacters] = useState([]);
+
+    const [newChar, setNewChar] = useState({
+        level: 1,
+        aligment: '',
+        backstory: '',
+        name: '',
+        clas: '',
+        experience: '',
+        race: ''
+    });
+
+    const changeNewChar = (param, value) => {
+        setNewChar({
+            ...newChar,
+            [param] : value
+        })
+    }
     
-    const [aligment, setAligment] = useState('');
-    const selectedAligment  = (event) =>{
-        setAligment(event.target.value);
-    }
 
-    const [backstory, setBackstory] = useState('');
-    const selectedBackstory  = (event) =>{
-        setBackstory(event.target.value);
-    }
-
-    const [name, setName] = useState('');
-    const characterName = (event) => {
-        setName(event.target.value);
-    };
-
-    const [clas, setClas] = useState('');
-    const selectedClas = (event) =>{
-        setClas(event.target.value);
-    }
-
-    const [expirience, setExpirience] = useState('');
-    const allExp = (event) => {
-        setExpirience(event.target.value);
-    };
-
-    const [level, setLevel] = useState(1);
-
-    const [race, setRace] = useState('');
-    const selectedRace = (event) =>{
-        setRace(event.target.value);
-    }
    
-    const saveCharacter = () => {
-        let id = 1;
-        id = getNextId(id);
-
-        const data = {
-            id: id,
-            level: level,
-            aligment: aligment,
-            backstory: backstory,
-            name: name,
-            clas: clas,
-            experience: expirience,
-            race: race,
-        }
-
-        const characters = JSON.parse(localStorage.getItem('Characters')) || [];
-        characters.push(data);
-        localStorage.setItem('Characters', JSON.stringify(characters));
-
-        
+   const saveCharacter = () => {
+        const characterWithId = { ...newChar, id: uuidv4() };
+        const updatedCharacters = [...characters, characterWithId];
+        setCharacters(updatedCharacters);
+        localStorage.setItem('Characters', JSON.stringify(updatedCharacters));
         resetData();
-        
     };
 
-    function getNextId(key) {
-        const data = JSON.parse(localStorage.getItem('Characters')) || [];
-        if (data.length === 0) {
-          return key; 
-        }
-        const lastObject = data[data.length - 1];
-        return lastObject.id + 1;
-      }
+    
 
     const resetData = () =>{
-        setLevel(1);
-        setAligment('');
-        setBackstory('');
-        setName('');
-        setClas('');
-        setExpirience('');
-        setRace('');
+        setNewChar({
+            level: 1,
+            aligment: '',
+            backstory: '',
+            name: '',
+            clas: '',
+            experience: '',
+            race: ''
+        })
     }
 
 
@@ -94,15 +62,15 @@ export default function Profile(){
                 <table className="profile">
                     <tbody>
                         <tr>
-                            <td rowspan="2"><CharacterName name={name} characterName= {characterName}/></td>
-                            <td><ClassDropdown clas={clas} selectedClas={selectedClas}/></td>
-                            <td><Expirience expirience={expirience} allExp={allExp}/></td>
-                            <td><LevelCounter setLevel={setLevel} level={level}/></td>
+                            <td rowspan="2"><CharacterName name={newChar.name} changeNewChar = {changeNewChar}/></td>
+                            <td><ClassDropdown clas={newChar.clas} changeNewChar = {changeNewChar}/></td>
+                            <td><Expirience expirience={newChar.expirience} changeNewChar = {changeNewChar}/></td>
+                            <td><LevelCounter level={newChar.level} changeNewChar = {changeNewChar} newChar={newChar}/></td>
                         </tr>
                         <tr>
-                            <td><RaceDropdown race={race} selectedRace={selectedRace}/></td>
-                            <td><Backstory backstory = {backstory} selectedBackstory = {selectedBackstory}/></td>
-                            <td><Aligment aligment={aligment} selectedAligment = {selectedAligment}/></td>
+                            <td><RaceDropdown race={newChar.race} changeNewChar = {changeNewChar}/></td>
+                            <td><Backstory backstory = {newChar.backstory} changeNewChar = {changeNewChar}/></td>
+                            <td><Aligment aligment={newChar.aligment} changeNewChar = {changeNewChar}/></td>
                         </tr>
                     </tbody>
                 </table>

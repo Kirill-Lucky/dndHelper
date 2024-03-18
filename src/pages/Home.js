@@ -2,6 +2,6 @@ export default function Home(){
        
 
     return (
-        <button type="button">Test</button>
+       <h1>Modified 18.03.2024</h1>
     )
 }

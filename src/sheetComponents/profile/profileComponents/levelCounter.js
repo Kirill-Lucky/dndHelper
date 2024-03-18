@@ -3,18 +3,18 @@ import styles from '../styleComponents/levelCounter.module.css'
 
 
 
-export default function LevelCounter({setLevel, level}){
+export default function LevelCounter({changeNewChar, level, newChar}){
     const increment = () => {
-        if (level < 20) {
-          setLevel(level + 1);
-        }
-      };
-    
-      const decrement = () => {
+      if (level < 20) {
+        changeNewChar('level', newChar.level + 1);
+      }
+    };
+
+    const decrement = () => {
         if (level > 1) {
-          setLevel(level - 1);
+          changeNewChar('level', newChar.level - 1);
         }
-      };
+    };
 
 
     return (
