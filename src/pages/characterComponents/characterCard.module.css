@@ -1,30 +1,65 @@
 .card {
-  width: 33%;
-  height: auto;
-  margin: 10px;
-  background-color: #0d2c4d;
-  color: #ffffff;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
+    width: 30%;
+    margin: 1%;
+    background-color: #1e2a3a;
+    border-radius: 8px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+    box-sizing: border-box; /* чтобы включить padding в расчеты размеров элемента */
 
-.avatar{
-  margin: 5px;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-image: url("/public/img/char1.jpg");
-  background-size: cover;
-}
-
-.card td{
+  }
   
-  width: 30%; /* Ширина карточки, чтобы они занимали по три в ряду */
-  margin: 10px; /* Отступы между карточками */
-  text-align: center;
-
-}
-
+  .avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: url("/public/img/char1.jpg");
+    background-size: cover;
+    margin-right: 20px;
+    float: left; /* чтобы аватар находился слева */
+  }
+  
+ h1 {
+    color: #fff;
+    margin: 0;
+    margin-bottom: 40px;
+  }
+ 
+ h3 {
+    color: #fff;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .actions {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .actions button {
+    margin: 0 10px;
+  }
+  
+  .edit {
+    background-color: #f1c40f;
+  }
+  
+  .delete {
+    background-color: #e74c3c;
+  }
+  

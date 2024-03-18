@@ -1,5 +1,5 @@
 import styles from '../styleComponents/characterName.module.css'
-import React, { useState } from 'react';
+import React from 'react';
 
 
 export default function CharacterName({name, changeNewChar}){

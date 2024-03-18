@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import styles from '../styleComponents/backstory.module.css'
 
 
@@ -10,20 +10,20 @@ export default function Backstory({backstory, changeNewChar}){
             <p>Backstory</p>
             <select value={backstory} onChange={(e) => changeNewChar("backstory", e.target.value)}>
                 <option value= "">Pick your Backstory</option>
-                <option value="entertainer">Entertainer</option>
-                <option value="urchin">Urchin</option>
-                <option value="noble">Noble</option>
-                <option value="guild-artisan">Guild artisand</option>
-                <option value="sailor">Sailor</option>
-                <option value="sage">Sage</option>
-                <option value="folk-hero">Folk hero</option>
-                <option value="hermit">Hermit</option>
-                <option value="pirate">Pirate</option>
-                <option value="criminal">Criminal</option>
-                <option value="acolyte">Acolyte</option>
-                <option value="soldier">Soldier</option>
-                <option value="outlander">Outlander</option>
-                <option value="charlatan">Charlatan</option>
+                <option value="Entertainer">Entertainer</option>
+                <option value="Urchin">Urchin</option>
+                <option value="Noble">Noble</option>
+                <option value="Guild-artisan">Guild artisand</option>
+                <option value="Sailor">Sailor</option>
+                <option value="Sage">Sage</option>
+                <option value="Folk-hero">Folk hero</option>
+                <option value="Hermit">Hermit</option>
+                <option value="Pirate">Pirate</option>
+                <option value="Criminal">Criminal</option>
+                <option value="Acolyte">Acolyte</option>
+                <option value="Soldier">Soldier</option>
+                <option value="Outlander">Outlander</option>
+                <option value="Charlatan">Charlatan</option>
             </select>
            
         </div>

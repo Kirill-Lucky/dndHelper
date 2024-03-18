@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import styles from '../styleComponents/raceDropdown.module.css'
 
 
@@ -9,15 +9,15 @@ export default function RaceDropdown({race, changeNewChar}){
             <p>Race</p>
             <select value={race} onChange={(e) => changeNewChar("race", e.target.value)}>
                 <option value= "">Pick your Race</option>
-                <option value="gnome">Gnome</option>
-                <option value="dwarf">Dwarf</option>
-                <option value="dragonborn">Dragonborn</option>
-                <option value="half-ork">Half-orc</option>
-                <option value="halfling">Halfling</option>
-                <option value="half-elf">Half-elf</option>
-                <option value="human">Human</option>
-                <option value="tiefling">Tiefling</option>
-                <option value="elf">Elfe</option>
+                <option value="Gnome">Gnome</option>
+                <option value="Dwarf">Dwarf</option>
+                <option value="Dragonborn">Dragonborn</option>
+                <option value="Half-ork">Half-orc</option>
+                <option value="Halfling">Halfling</option>
+                <option value="Half-elf">Half-elf</option>
+                <option value="Human">Human</option>
+                <option value="Tiefling">Tiefling</option>
+                <option value="Elf">Elfe</option>
             </select>
           
         </div>

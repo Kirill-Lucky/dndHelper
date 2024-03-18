@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import styles from '../styleComponents/classDropdown.module.css'
 
 
@@ -9,19 +9,19 @@ export default function ClassDropdown({clas, changeNewChar}){
             <p>Class</p>
             <select value={clas} onChange={(e) => changeNewChar("clas", e.target.value)}>
                 <option value= "">Pick your Class</option>
-                <option value="bard">Bard</option>
-                <option value="barbarian">Barbarian</option>
-                <option value="fighter">Fighter</option>
-                <option value="wizard">Wizard</option>
-                <option value="druid">Druid</option>
-                <option value="cleric">Cleric</option>
-                <option value="artificer">Artificer</option>
-                <option value="warlock">Warlock</option>
-                <option value="monk">Monk</option>
-                <option value="paladin">Paladin</option>
-                <option value="rogue">Rogue</option>
-                <option value="ranger">Ranger</option>
-                <option value="sorcerer">Sorcerer</option>
+                <option value="Bard">Bard</option>
+                <option value="Barbarian">Barbarian</option>
+                <option value="Fighter">Fighter</option>
+                <option value="Wizard">Wizard</option>
+                <option value="Druid">Druid</option>
+                <option value="Cleric">Cleric</option>
+                <option value="Artificer">Artificer</option>
+                <option value="Warlock">Warlock</option>
+                <option value="Monk">Monk</option>
+                <option value="Paladin">Paladin</option>
+                <option value="Rogue">Rogue</option>
+                <option value="Ranger">Ranger</option>
+                <option value="Sorcerer">Sorcerer</option>
             </select>
             
         </div>
