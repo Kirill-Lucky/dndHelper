@@ -8,6 +8,7 @@
     vertical-align: top;
     padding: 20px;
     box-sizing: border-box; /* чтобы включить padding в расчеты размеров элемента */
+    color: #fff;
 
   }
   
@@ -21,19 +22,13 @@
     float: left; /* чтобы аватар находился слева */
   }
   
- h1 {
+ .name {
     color: #fff;
     margin: 0;
     margin-bottom: 40px;
   }
- 
- h3 {
-    color: #fff;
-    margin: 0;
-    margin-bottom: 10px;
-  }
   
-  button {
+.btn {
     background-color: #e74c3c;
     color: #fff;
     border: none;

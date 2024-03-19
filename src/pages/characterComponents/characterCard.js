@@ -18,14 +18,14 @@ export default function Card(){
         <div key={character.id} className={styles.card}>
             <div className={styles.avatar}></div>
             <div>
-                <h1>{character.name}</h1>        
+                <h1 className={styles.name}>{character.name}</h1>        
                 <h3>{character.race}</h3>
                 <h3>{character.backstory}</h3>
                 <h3>{character.clas} lvl {character.level}</h3>
             </div>
             <div className={styles.actions}>
-                <button className={`${styles.button} ${styles.edit}`}>Edit</button>
-                <button className={`${styles.button} ${styles.delete}`}  onClick={() => handleDelete(character.id)}>Delete</button>
+                <button className={`${styles.btn} ${styles.edit}`}>Edit</button>
+                <button className={`${styles.btn} ${styles.delete}`}  onClick={() => handleDelete(character.id)}>Delete</button>
             </div>
             <div style={{ clear: 'both' }}></div> {/* добавляем пустой div для очистки float */}
         
