@@ -1,7 +1,9 @@
 import React from 'react';
-import styles from './characterCard.module.css'; 
+import styles from './characterCard.module.css';
+ 
 
 export default function Card(){
+
     const userCharacter = JSON.parse(localStorage.getItem('Characters')) || [];
 
     if (!Array.isArray(userCharacter) || userCharacter.length === 0) {
@@ -13,6 +15,8 @@ export default function Card(){
         localStorage.setItem('Characters', JSON.stringify(updatedCharacters));
         window.location.reload(); // Reload the page to reflect the changes
     };
+
+
 
     const characterCards = userCharacter.map(character => (
         <div key={character.id} className={styles.card}>
@@ -27,7 +31,7 @@ export default function Card(){
                 <button className={`${styles.btn} ${styles.edit}`}>Edit</button>
                 <button className={`${styles.btn} ${styles.delete}`}  onClick={() => handleDelete(character.id)}>Delete</button>
             </div>
-            <div style={{ clear: 'both' }}></div> {/* добавляем пустой div для очистки float */}
+            <div style={{ clear: 'both' }}></div>
         
         </div>
     ));
