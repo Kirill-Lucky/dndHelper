@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './characterCard.module.css';
+import EditingWindow from './editingWindow/editingWindow';
  
 
 export default function Card(){
+    const [modalIsOpen, setModalOpen] = useState(false);
+    const [id, setId] = useState(null);
 
     const userCharacter = JSON.parse(localStorage.getItem('Characters')) || [];
 
@@ -13,10 +16,13 @@ export default function Card(){
     const handleDelete = (id) => {
         const updatedCharacters = userCharacter.filter(character => character.id !== id);
         localStorage.setItem('Characters', JSON.stringify(updatedCharacters));
-        window.location.reload(); // Reload the page to reflect the changes
+        window.location.reload(); 
     };
 
-
+    const handleEditClick = (characterId) => {
+        setId(characterId);
+        setModalOpen(true);
+    };  
 
     const characterCards = userCharacter.map(character => (
         <div key={character.id} className={styles.card}>
@@ -28,7 +34,8 @@ export default function Card(){
                 <h3>{character.clas} lvl {character.level}</h3>
             </div>
             <div className={styles.actions}>
-                <button className={`${styles.btn} ${styles.edit}`}>Edit</button>
+                <button className={`${styles.btn} ${styles.edit}`} onClick={() => handleEditClick(character.id)}>Edit</button>
+                <EditingWindow isOpen={modalIsOpen} onClose = {() => setModalOpen(false)} id={id}/>
                 <button className={`${styles.btn} ${styles.delete}`}  onClick={() => handleDelete(character.id)}>Delete</button>
             </div>
             <div style={{ clear: 'both' }}></div>

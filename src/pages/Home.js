@@ -1,7 +1,10 @@
+import styles from './Home.module.css';
+
 export default function Home(){
        
-
     return (
-       <h1>Modified 18.03.2024</h1>
+       <div className={styles.home}>
+            <h1>Modified 16.05.2024</h1>
+        </div>
     )
 }

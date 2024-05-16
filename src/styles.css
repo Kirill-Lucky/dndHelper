@@ -4,8 +4,7 @@
 
 body {
     margin: 0;
-    background-image: url(/public/img/back.jpg);
-    background-repeat: no-repeat;
+    background-color: #20222c;
     background-size: 100%;
 }
 .container{
@@ -15,7 +14,7 @@ body {
 }
 
 .nav {
-    background-color: #333;
+    background-color: #283351;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -56,3 +55,19 @@ body {
 .table{
     align-items: center;
 }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #020022; 
+    color: white; 
+    padding: 20px 0; 
+    text-align: center; 
+  }
+  
+  .footer h4 {
+    margin: 10px 0; /* Внешний отступ сверху и снизу для каждого параграфа */
+  }
+  

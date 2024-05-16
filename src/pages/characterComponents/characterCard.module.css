@@ -1,7 +1,7 @@
 .card {
     width: 30%;
     margin: 1%;
-    background-color: #1e2a3a;
+    background-color: #242b3f;
     border-radius: 8px;
     overflow: hidden;
     display: inline-block;
@@ -41,6 +41,7 @@
   }
   
   .actions {
+    padding-top: 12px;
     width: 100%;
     margin-top: 20px;
     text-align: center;

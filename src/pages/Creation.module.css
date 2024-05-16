@@ -1,9 +1,9 @@
 .sheet{
     padding: 10px;
     margin: 0 auto;
-    background-image: url(/public/img/old.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;;
+    background-color: #242b3f;
+    border-radius: 8px;
     width: 82%;
     text-align: center;
 }
+

@@ -22,7 +22,6 @@ export default function Aligment({changeNewChar, aligment}){
             
         </div>
 
-        //{aligment} переменная для передачи state
   )
 }
 

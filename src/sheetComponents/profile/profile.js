@@ -8,6 +8,7 @@ import Aligment from "./profileComponents/aligment.js"
 import Backstory from "./profileComponents/backstory.js"
 import Expirience from "./profileComponents/expirience.js"
 import { v4 as uuidv4 } from 'uuid';
+import Approving from "./approvidWindow/approvingWindow.js"
 
 
 export default function Profile(){
@@ -54,6 +55,13 @@ export default function Profile(){
         })
     }
 
+    const[approveOpen, setApproveOpen] = useState(false);
+
+    const helpFunction = () =>{
+        saveCharacter();
+        setApproveOpen(true)
+    };
+
 
 
     return (
@@ -74,7 +82,8 @@ export default function Profile(){
                         </tr>
                     </tbody>
                 </table>
-                <button type="button" className={styles.creation} onClick={saveCharacter}>Save</button>
+                <button type="button" className={styles.creation} onClick={helpFunction} >Save</button>
+                <Approving isOpen={approveOpen} onClose= {()=>setApproveOpen(false)} />
             </form>
         </div>
     )

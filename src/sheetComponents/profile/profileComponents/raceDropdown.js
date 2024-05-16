@@ -1,14 +1,14 @@
 import React from "react"
 import styles from '../styleComponents/raceDropdown.module.css'
 
+export default function RaceDropdown({ race, handleChangeRace, changeNewChar, handleChangeRaceType }) {
+    const handleChange = handleChangeRaceType === 'handleChangeRace' ? handleChangeRace : changeNewChar;
 
-export default function RaceDropdown({race, changeNewChar}){
-
-    return(
+    return (
         <div className={styles.race}>
             <p>Race</p>
-            <select value={race} onChange={(e) => changeNewChar("race", e.target.value)}>
-                <option value= "">Pick your Race</option>
+            <select value={race} onChange={(e) => handleChange("race", e.target.value)}>
+                <option value="">Pick your Race</option>
                 <option value="Gnome">Gnome</option>
                 <option value="Dwarf">Dwarf</option>
                 <option value="Dragonborn">Dragonborn</option>
@@ -17,12 +17,8 @@ export default function RaceDropdown({race, changeNewChar}){
                 <option value="Half-elf">Half-elf</option>
                 <option value="Human">Human</option>
                 <option value="Tiefling">Tiefling</option>
-                <option value="Elf">Elfe</option>
+                <option value="Elf">Elf</option>
             </select>
-          
         </div>
-
-        //{race} переменная для передачи state
-  )
+    );
 }
-
