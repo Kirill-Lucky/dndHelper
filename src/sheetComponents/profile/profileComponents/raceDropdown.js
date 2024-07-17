@@ -1,13 +1,13 @@
 import React from "react"
 import styles from '../styleComponents/raceDropdown.module.css'
 
-export default function RaceDropdown({ race, handleChangeRace, changeNewChar, handleChangeRaceType }) {
-    const handleChange = handleChangeRaceType === 'handleChangeRace' ? handleChangeRace : changeNewChar;
+export default function RaceDropdown({ race, changeNewChar, isEditing }) {
+    
 
     return (
         <div className={styles.race}>
             <p>Race</p>
-            <select value={race} onChange={(e) => handleChange("race", e.target.value)}>
+            <select value={race} onChange={(e) => isEditing ? changeNewChar(e.target.value) : changeNewChar("race", e.target.value)}>
                 <option value="">Pick your Race</option>
                 <option value="Gnome">Gnome</option>
                 <option value="Dwarf">Dwarf</option>

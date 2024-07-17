@@ -2,12 +2,12 @@ import React from "react"
 import styles from '../styleComponents/classDropdown.module.css'
 
 
-export default function ClassDropdown({clas, changeNewChar}){
+export default function ClassDropdown({clas, changeNewChar, isEditing}){
 
     return(
         <div className={styles.clas}>
             <p>Class</p>
-            <select value={clas} onChange={(e) => changeNewChar("clas", e.target.value)}>
+            <select value={clas} onChange={(e) => isEditing ? changeNewChar(e.target.value) : changeNewChar("clas", e.target.value)}>
                 <option value= "">Pick your Class</option>
                 <option value="Bard">Bard</option>
                 <option value="Barbarian">Barbarian</option>

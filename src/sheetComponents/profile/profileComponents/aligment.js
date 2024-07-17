@@ -2,12 +2,12 @@ import React from "react"
 import styles from '../styleComponents/aligment.module.css'
 
 
-export default function Aligment({changeNewChar, aligment}){
+export default function Aligment({changeNewChar, aligment,isEditing}){
 
     return(
         <div className={styles.aligment}>
             <p>Aligment</p>
-            <select value={aligment} onChange={(e) => changeNewChar("aligment", e.target.value)}>
+            <select value={aligment} onChange={(e) => isEditing ? changeNewChar(e.target.value) : changeNewChar("aligment", e.target.value)}>
                 <option value= "">Pick your Aligment</option>
                 <option value="lawful-good">Lawful-Good</option>
                 <option value="lawful-neutral">Lawful-Neutral</option>

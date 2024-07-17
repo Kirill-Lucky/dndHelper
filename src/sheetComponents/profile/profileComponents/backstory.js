@@ -2,13 +2,13 @@ import React from "react"
 import styles from '../styleComponents/backstory.module.css'
 
 
-export default function Backstory({backstory, changeNewChar}){
+export default function Backstory({backstory, changeNewChar, isEditing}){
    
 
     return(
         <div className={styles.backstory}>
             <p>Backstory</p>
-            <select value={backstory} onChange={(e) => changeNewChar("backstory", e.target.value)}>
+            <select value={backstory} onChange={(e) => isEditing ? changeNewChar(e.target.value) : changeNewChar("backstory", e.target.value)}>
                 <option value= "">Pick your Backstory</option>
                 <option value="Entertainer">Entertainer</option>
                 <option value="Urchin">Urchin</option>

@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import styles from './profile.module.css'
-import LevelCounter from "./profileComponents/levelCounter.js" 
+import LevelCounter from "./profileComponents/level.js" 
 import  RaceDropdown from "./profileComponents/raceDropdown.js"
 import ClassDropdown from "./profileComponents/classDropdown.js"
 import CharacterName from "./profileComponents/characterName.js"
@@ -13,9 +13,8 @@ import Approving from "./approvidWindow/approvingWindow.js"
 
 export default function Profile(){
     const [characters, setCharacters] = useState([]);
-
     const [newChar, setNewChar] = useState({
-        level: 1,
+        level: '',
         aligment: '',
         backstory: '',
         name: '',
@@ -45,7 +44,7 @@ export default function Profile(){
 
     const resetData = () =>{
         setNewChar({
-            level: 1,
+            level: '',
             aligment: '',
             backstory: '',
             name: '',
@@ -73,7 +72,7 @@ export default function Profile(){
                             <td rowspan="2"><CharacterName name={newChar.name} changeNewChar = {changeNewChar}/></td>
                             <td><ClassDropdown clas={newChar.clas} changeNewChar = {changeNewChar}/></td>
                             <td><Expirience expirience={newChar.expirience} changeNewChar = {changeNewChar}/></td>
-                            <td><LevelCounter level={newChar.level} changeNewChar = {changeNewChar} newChar={newChar}/></td>
+                            <td><LevelCounter level={newChar.level} changeNewChar = {changeNewChar}/></td>
                         </tr>
                         <tr>
                             <td><RaceDropdown race={newChar.race} changeNewChar = {changeNewChar}/></td>
